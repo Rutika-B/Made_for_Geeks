@@ -1,0 +1,29 @@
+.info-container {
+  background-color: #dbe2ef;
+  color: #112d4e;
+  min-height: 50%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10%;
+  padding: 5%;
+  font-size: 17px;
+}
+
+span {
+  display: inline-block;
+}
+
+.info-header {
+  font-size: 20px;
+  color: #112d4e;
+  width: 100%;
+  padding-bottom: 5%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.display-linebreak {
+  white-space: pre-line;
+  padding-left: 5%;
+  line-height: 17px;
+}

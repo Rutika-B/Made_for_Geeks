@@ -22,7 +22,7 @@ import {
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
-export function MultiLevelSidebar() {
+export function RecursionSidebar() {
   const [open, setOpen] = React.useState(0);
 
   const handleOpen = (value) => {
@@ -30,10 +30,14 @@ export function MultiLevelSidebar() {
   };
 
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full sticky z-50 top-0 max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <aside
+      id="default-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+    >
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
-          Sidebar
+          Recursion 
         </Typography>
       </div>
       <List>
@@ -48,12 +52,12 @@ export function MultiLevelSidebar() {
             />
           }
         >
-          <NavLink to={"/tree/introduction"}>
+          <NavLink to={"/recursion/subsequence"}>
             <ListItem>
               <ListItemPrefix>
                 <InboxIcon className="h-5 w-5" />
               </ListItemPrefix>
-              Introduction
+              Subsequences
             </ListItem>
           </NavLink>
           <ListItem className="p-0" selected={open === 1}>
@@ -152,6 +156,6 @@ export function MultiLevelSidebar() {
           Log Out
         </ListItem>
       </List>
-    </Card>
+    </aside>
   );
 }

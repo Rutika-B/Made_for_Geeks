@@ -1,9 +1,14 @@
-import React from 'react'
+import * as React from "react";
+import Intro from "../../components/Intro";
 
 function TreeIntro() {
   return (
-    <div>TreeIntroooo</div>
-  )
+    <>
+      <Intro>
+        <h3>This is introduction section of trees</h3>
+      </Intro>
+    </>
+  );
 }
 
-export default TreeIntro
+export default TreeIntro;
