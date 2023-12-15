@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Tree from "./lib/Tree";
+import Tree from "../../lib/Recursion/Subsequences/Tree";
 import TreeDiagram from "../../components/TreeDiagram";
 import TransitionedList from "../../components/TransitionList";
 // import TraversalInfo from "../../components/TraversalInfo";
 import "../../styles/App.css";
-import RecursionList from "./lib/RecursionList";
+import RecursionList from "../../constants/Recursion/RecursionList";
 import FinalListTransition from "./components/FinalList";
 import { Typography } from "@material-tailwind/react";
 import ProblemHeader from "../../components/ProblemHeader";
 import MButton from "../../components/MButton";
-import problems from "../../ListofProblems/Problems";
+import problems from "../../constants/ListofProblems/Problems";
+import Landing from "../../components/Landing";
 
 class SubSequences extends Component {
   constructor(props) {
@@ -105,7 +106,7 @@ class SubSequences extends Component {
             this.animateTree(
               this.state.traversalOrder[RecursionList[index + 1]?.index]
             );
-          }, 3000);
+          }, 2500);
         }
       );
     }
@@ -245,6 +246,7 @@ class SubSequences extends Component {
           </div> */}
           </section>
         </div>
+        <Landing topic="recursion" problem="subsequences"/>
       </div>
     );
   }

@@ -32,7 +32,8 @@ export function RecursionSidebar() {
   return (
     <aside
       id="default-sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      // class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      // className="fixed inset-y-0 right-0 w-[300px] border"
       aria-label="Sidebar"
     >
       <div className="mb-2 p-4">

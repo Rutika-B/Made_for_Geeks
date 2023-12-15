@@ -5,10 +5,14 @@ import TreeIntro from "./TreeIntro";
 export default function TreeLayout() {
   return (
     <>
-      <section>
+      {/* <section>
         <TreeSideBar />
         <TreeIntro />
-      </section>
+      </section> */}
+      <div className='w-full flex flex-row overflow-y-scroll'>
+            <TreeIntro/>
+            <TreeSideBar/>
+        </div>
     </>
   );
 }

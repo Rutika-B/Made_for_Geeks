@@ -1,7 +1,7 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Typography } from "@material-tailwind/react";
 import React from "react";
-import problems from "../ListofProblems/Problems";
+import problems from "../constants/ListofProblems/Problems";
 
 function ProblemHeader({ ...props }) {
   const topic = props.topic;

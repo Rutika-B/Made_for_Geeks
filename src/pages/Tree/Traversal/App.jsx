@@ -1,12 +1,14 @@
 import React, { Component, useEffect, useState } from "react";
-import TreesList from "./lib/TressList";
-import Tree from "./lib/TraversalAlgo";
+import TreesList from "../../../constants/Trees/Traversal/TressList";
+import Tree from "../../../lib/Trees/Traversal/TraversalAlgo";
 import TreeDiagram from "../../../components/TreeDiagram";
 import TransitionedList from "../../../components/TransitionList";
 // import TraversalInfo from "../components/TraversalInfo";
 import "../../../styles/App.css";
 import MButton from "../../../components/MButton";
 import ProblemHeader from "../../../components/ProblemHeader";
+import CodeEditorWindow from "../../../components/CodeEditorWindow";
+import Landing from "../../../components/Landing";
 
 class App extends Component {
   constructor(props) {
@@ -162,6 +164,7 @@ class App extends Component {
             </div>
           </section>
           <section className="right-container">
+            <MButton onClick={this.props.moreEghandle} key={this.props.key}>more examples</MButton>
             <span>Order of Traversal</span>
             <div className="transition-list">
               <TransitionedList list={this.state.list} />
@@ -172,6 +175,7 @@ class App extends Component {
             </div> */}
           </section>
         </div>
+          <Landing problem={this.state.selectedTraversal} topic="tree"/>
       </div>
     );
   }

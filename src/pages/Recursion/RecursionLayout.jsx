@@ -5,10 +5,10 @@ import RecurIntro from './RecurIntro'
 function RecursionLayout() {
   return (
     <>
-        <section>
-            <RecursionSidebar/>
+        <div className='w-full flex flex-row overflow-y-scroll'>
             <RecurIntro/>
-        </section>
+            <RecursionSidebar/>
+        </div>
     </>
   )
 }

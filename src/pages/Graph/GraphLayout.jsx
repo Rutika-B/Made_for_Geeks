@@ -1,12 +1,17 @@
 import React from 'react'
-import { MultiLevelGraphSidebar } from '../../components/GraphSideBar'
+import { GraphSidebar } from '../../components/GraphSideBar'
 import { Outlet } from 'react-router-dom'
+import GraphIntro from './GraphIntro'
 
 function GraphLayout() {
   return (
     <>
-        <MultiLevelGraphSidebar/>
-        <Outlet/>
+        {/* <MultiLevelGraphSidebar/>
+        <Outlet/> */}
+        <div className='w-full flex flex-row overflow-y-scroll'>
+            <GraphIntro/>
+            <GraphSidebar/>
+        </div>
     </>
   )
 }
