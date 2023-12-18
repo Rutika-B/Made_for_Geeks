@@ -34,13 +34,9 @@ export function TreeSideBar() {
       id="default-sidebar"
       // class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
       // aria-label="Sidebar"
+      className="bg-base-300 text-base-300 border-l-2 border-base-content"
     >
-      <div className="mb-2 p-4">
-        <Typography variant="h5" color="blue-gray">
-          Sidebar
-        </Typography>
-      </div>
-      <List>
+      <List className="text-base-content">
         <Accordion
           open={open === 1}
           icon={
@@ -72,15 +68,15 @@ export function TreeSideBar() {
               className="border-b-0 p-3"
             >
               <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" color="cyan" />
+                <PresentationChartBarIcon className="h-5 w-5" />
               </ListItemPrefix>
-              <Typography color="cyan" className="mr-auto font-normal">
+              <Typography className="mr-auto font-normal text-base-content">
                 Traversals
               </Typography>
             </AccordionHeader>
           </ListItem>
           <AccordionBody className="py-1">
-            <List className="p-0">
+            <List className="p-0 text-base-content">
               <NavLink to={"/tree/traversal/preorder"}>
                 <ListItem>
                   <ListItemPrefix>

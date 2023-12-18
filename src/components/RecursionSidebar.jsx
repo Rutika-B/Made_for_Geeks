@@ -5,8 +5,6 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  ListItemSuffix,
-  Chip,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -35,13 +33,10 @@ export function RecursionSidebar() {
       // class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
       // className="fixed inset-y-0 right-0 w-[300px] border"
       aria-label="Sidebar"
+      className="bg-base-300 text-base-300 border-l-2 border-base-content"
     >
-      <div className="mb-2 p-4">
-        <Typography variant="h5" color="blue-gray">
-          Recursion 
-        </Typography>
-      </div>
-      <List>
+      
+      <List className="text-base-content">
         <Accordion
           open={open === 1}
           icon={
@@ -61,21 +56,24 @@ export function RecursionSidebar() {
               Subsequences
             </ListItem>
           </NavLink>
-          <ListItem className="p-0" selected={open === 1}>
+          <ListItem className="p-0 " selected={open === 1}>
             <AccordionHeader
               onClick={() => handleOpen(1)}
-              className="border-b-0 p-3"
+              className="border-b-0 p-3 "
             >
               <ListItemPrefix>
                 <PresentationChartBarIcon className="h-5 w-5" />
               </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
+              <Typography
+                color="blue-gray"
+                className="mr-auto font-normal text-base-content"
+              >
                 Dashboard
               </Typography>
             </AccordionHeader>
           </ListItem>
           <AccordionBody className="py-1">
-            <List className="p-0">
+            <List className="p-0 text-base-content">
               <ListItem>
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
@@ -97,47 +95,7 @@ export function RecursionSidebar() {
             </List>
           </AccordionBody>
         </Accordion>
-        <Accordion
-          open={open === 2}
-          icon={
-            <ChevronDownIcon
-              strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${
-                open === 2 ? "rotate-180" : ""
-              }`}
-            />
-          }
-        >
-          <ListItem className="p-0" selected={open === 2}>
-            <AccordionHeader
-              onClick={() => handleOpen(2)}
-              className="border-b-0 p-3"
-            >
-              <ListItemPrefix>
-                <ShoppingBagIcon className="h-5 w-5" />
-              </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
-                E-Commerce
-              </Typography>
-            </AccordionHeader>
-          </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
-              <ListItem>
-                <ListItemPrefix>
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Orders
-              </ListItem>
-              <ListItem>
-                <ListItemPrefix>
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Products
-              </ListItem>
-            </List>
-          </AccordionBody>
-        </Accordion>
+
         <ListItem>
           <ListItemPrefix>
             <UserCircleIcon className="h-5 w-5" />
