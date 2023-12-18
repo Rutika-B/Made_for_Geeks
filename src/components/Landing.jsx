@@ -24,7 +24,7 @@ const Landing = ({ ...props }) => {
   // const [code, setCode] = useState(ccode);
   const [outputDetails, setOutputDetails] = useState(null);
   const [processing, setProcessing] = useState(false);
-  const [theme, setTheme] = useState("cobalt");
+  const [theme, setTheme] = useState("vs-dark");
   const [language, setLanguage] = useState(languageOptions[0]);
   const enterPress = useKeyPress("Enter");
   const ctrlPress = useKeyPress("Control");
@@ -140,11 +140,7 @@ const Landing = ({ ...props }) => {
       defineTheme(theme.value).then((_) => setTheme(theme));
     }
   }
-  useEffect(() => {
-    defineTheme("oceanic-next").then((_) =>
-      setTheme({ value: "oceanic-next", label: "Oceanic Next" })
-    );
-  }, []);
+ 
 
   const showSuccessToast = (msg) => {
     toast.success(msg || `Compiled Successfully!`, {
@@ -210,18 +206,13 @@ const Landing = ({ ...props }) => {
             code={code}
             onChange={onChange}
             language={language?.value}
-            theme={theme.value}
+            theme={theme}
           />
         </div>
 
         <div className="flex flex-shrink-0 w-[30%] flex-col">
           <OutputWindow outputDetails={outputDetails} />
-          {/* <div className="flex flex-col items-end">
-            <CustomInput
-              customInput={customInput}
-              setCustomInput={setCustomInput}
-            />
-          </div> */}
+         
           {outputDetails && <OutputDetails outputDetails={outputDetails} />}
         </div>
       </div>

@@ -11,15 +11,8 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
 export function TreeSideBar() {
@@ -50,16 +43,12 @@ export function TreeSideBar() {
         >
           <NavLink to={"/tree/introduction"}>
             <ListItem>
-              <ListItemPrefix>
-                <InboxIcon className="h-5 w-5" />
-              </ListItemPrefix>
+              <ListItemPrefix></ListItemPrefix>
               Introduction
             </ListItem>
           </NavLink>
           <ListItem>
-            <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
-            </ListItemPrefix>
+            <ListItemPrefix></ListItemPrefix>
             Create BST
           </ListItem>
           <ListItem className="p-0" selected={open === 1}>
@@ -67,9 +56,7 @@ export function TreeSideBar() {
               onClick={() => handleOpen(1)}
               className="border-b-0 p-3"
             >
-              <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" />
-              </ListItemPrefix>
+              <ListItemPrefix></ListItemPrefix>
               <Typography className="mr-auto font-normal text-base-content">
                 Traversals
               </Typography>
@@ -79,49 +66,37 @@ export function TreeSideBar() {
             <List className="p-0 text-base-content">
               <NavLink to={"/tree/traversal/preorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   PreOrder Traversal
                 </ListItem>
               </NavLink>
               <NavLink to={"/tree/traversal/inorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   Inorder traversal
                 </ListItem>
               </NavLink>
               <NavLink to={"/tree/traversal/postorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   PostOrder traversal
                 </ListItem>
               </NavLink>
               <NavLink to={"/tree/traversal/levelorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   LevelOrder traversal
                 </ListItem>
               </NavLink>
               <NavLink to={"/tree/traversal/zigzagorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   Zigzag traversal
                 </ListItem>
               </NavLink>
               <NavLink to={"/tree/traversal/boundaryorder"}>
                 <ListItem>
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
+                  <ListItemPrefix></ListItemPrefix>
                   Boundary traversal
                 </ListItem>
               </NavLink>
@@ -130,16 +105,16 @@ export function TreeSideBar() {
         </Accordion>
 
         <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
+          <ListItemPrefix></ListItemPrefix>
           Lowest common ancestor
         </ListItem>
         <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
+          <ListItemPrefix></ListItemPrefix>
+          Depth of Tree
+        </ListItem>
+        <ListItem>
+          <ListItemPrefix></ListItemPrefix>
+          Symmetric Tree
         </ListItem>
       </List>
     </aside>

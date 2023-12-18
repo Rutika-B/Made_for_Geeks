@@ -162,8 +162,8 @@ const problems = {
         brief:
           "Given root of the tree, return preorder traversal of it's node value, Preorder traversal is defined as a type of tree traversal that follows the Root-Left-Right policy where:",
         points: [
-          "The root node of the subtree is visited first.",
           "Then the left subtree  is traversed.",
+          "The root node of the subtree is visited first.",
           "At last, the right subtree is traversed.",
         ],
       },
@@ -171,8 +171,8 @@ const problems = {
 
       approach: [
         "Follow step 2 to 4 until root != NULL",
-        "Write root -> data",
         "Preorder (root -> left)",
+        "Write root -> data",
         "Preorder (root -> right)",
         "End",
       ],
@@ -476,7 +476,7 @@ const problems = {
       title: "Levelorder traversal of the tree",
       statement: {
         brief:
-          "Given root of the tree, return preorder traversal of it's node value, Preorder traversal is defined as a type of tree traversal that follows the Root-Left-Right policy where:",
+          "Given root of the tree, return Levelorder traversal of it's node value, Preorder traversal is defined as a type of tree traversal that follows the Root-Left-Right policy where:",
         points: [
           "The root node of the subtree is visited first.",
           "Then the left subtree  is traversed.",
@@ -1010,7 +1010,7 @@ const problems = {
   `
     },
     boundaryorder: {
-      title: "Postorder traversal of the tree",
+      title: "boundary order traversal of the tree",
       statement: {
         brief:
           "Given root of the tree, return preorder traversal of it's node value, Preorder traversal is defined as a type of tree traversal that follows the Root-Left-Right policy where:",

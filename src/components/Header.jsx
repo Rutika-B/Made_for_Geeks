@@ -7,6 +7,7 @@ function Header() {
   //themeMode by chakra
   const { colorMode, toggleColorMode } = useColorMode();
 
+
   return (
     <>
       <header className="w-full shadow sticky z-50 top-0 bg-white">
