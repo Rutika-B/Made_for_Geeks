@@ -20,6 +20,8 @@ const problems = {
         "4.Preorder (root -> right)",
         "5.End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=RlUu72JrOCQ&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=6",
+      leetcode:'https://leetcode.com/problems/binary-tree-preorder-traversal/description/',
       cpp: `// C++ program for preorder traversals
 
       #include <bits/stdc++.h>
@@ -176,6 +178,8 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=Z_NEgBgbRVI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=7",
+      leetcode:'https://leetcode.com/problems/binary-tree-inorder-traversal/description/',
       cpp: `
       // C++ program for Inorder traversals
 
@@ -332,6 +336,8 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=COQOU6klsBg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=8",
+      leetcode:'https://leetcode.com/problems/binary-tree-postorder-traversal/description/',
       cpp: `// C++ program for Postorder traversals
 
   #include <bits/stdc++.h>
@@ -492,6 +498,8 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=9",
+      leetcode:"https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
       cpp: `// Recursive C program for level
   // order traversal of Binary Tree
   #include <stdio.h>
@@ -747,6 +755,8 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=3OXWEdlIGl4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=20",
+      leetcode:"https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
       cpp: `// C++ implementation of a O(n) time method for
   // Zigzag order traversal
   #include <iostream>
@@ -1029,6 +1039,8 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
+      ytLink:"https://www.youtube.com/watch?v=0ca1nvR0be4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=21",
+      leetcode:"https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
       cpp: `#include <iostream>
   using namespace std;
   
@@ -1364,6 +1376,8 @@ const problems = {
         "Apply this for every element in the array starting from index 0 until we reach the last index.",
         "Print the subsequence once the last index is reached.",
       ],
+      ytLink:"https://www.youtube.com/watch?v=AxNNVECce8c&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=6&t=622s",
+      leetcode:"https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab",
       cpp: `// C++ code to print all possible
       // subsequences for given array using
       // recursion

@@ -2,14 +2,17 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Typography } from "@material-tailwind/react";
 import React from "react";
 import problems from "../constants/ListofProblems/Problems";
+import SocialLinks from "./Links";
 
 function ProblemHeader({ ...props }) {
   const topic = props.topic;
   const problem = props.problem;
-
+ 
   const data = problems[`${topic}`][`${problem}`];
+  
 
   return (
+    <>
     <div className="flex flex-col w-full border-opacity-50 mx-7 my-4">
       <div className="grid h-15 card  rounded-none place-items-start py-4 mb-2">
         <Typography variant="h2">{data.title}</Typography>
@@ -51,7 +54,9 @@ function ProblemHeader({ ...props }) {
         </div>
       </div>
     </div>
-    // <div>no</div>
+    <SocialLinks data={data}/>
+    </>
+    
   );
 }
 

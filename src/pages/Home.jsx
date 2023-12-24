@@ -1,8 +1,10 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import SocialLinks from "../components/Links";
 
 function Home() {
   return (
+    <>
     <div className="w-full mx-auto my-auto justify-center items-center text-center max-w-5xl">
       <div className="relative overflow-hidde rounded-lg sm:mx-16 mx-2 sm:py-16">
         <div className="my-auto text-center">
@@ -60,6 +62,7 @@ function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

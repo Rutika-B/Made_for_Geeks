@@ -2,13 +2,11 @@ import Editor from "@monaco-editor/react";
 import { useState,useEffect } from "react";
 
 const CodeEditorWindow = ({ onChange, language, code, theme }) => {
-  
-  console.log(code);
+
   const [value, setValue] = useState(code || "");
   useEffect(() => {
     setValue(code || "");
   }, [code]);
-  console.log(value)
   const handleEditorChange = (value) => {
     setValue(value);
     onChange("code", value);

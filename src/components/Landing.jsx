@@ -31,14 +31,10 @@ const Landing = ({ ...props }) => {
 
   const onSelectChange = (sl) => {
    
-    console.log("selected Option...", sl);
-    console.log(sl.value);
     setLanguage(sl);
-    console.log(language);
     const data=problems[`${topic}`][`${problem}`][`${sl.value}`];
  
     setCode(data);
-    console.log(code);
   };
  
   useEffect(() => {
