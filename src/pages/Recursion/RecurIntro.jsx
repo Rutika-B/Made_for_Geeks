@@ -1,12 +1,37 @@
-import React from 'react'
-import Intro from '../../components/Intro'
-
+import React from "react";
+import Intro from "../../components/Intro";
+import { Typography } from "@material-tailwind/react";
+import recurFun from "../../assets/recursion.png";
+const comp = [
+  {
+    title: "Base case:",
+    desc: "Every recursive function must have a base case. The base case is the simplest scenario that does not require further recursion. This is a termination condition that prevents the function from calling itself indefinitely. Without a proper base case, a recursive function can lead to infinite recursion.",
+  },
+  {
+    title: "recursive case:",
+    desc: "In the recursive case, the function calls itself with the modified arguments. This is the essence of recursion – solving a larger problem by breaking it down into smaller instances of the same problem. The recursive case should move closer to the base case with each iteration.",
+  },
+];
 function RecurIntro() {
   return (
     <Intro>
-      <h1>this is introduction section of recursion Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere aliquam ipsa odio id, et at dolor, veritatis quisquam temporibus ullam excepturi veniam? Impedit quae error perferendis accusamus, ipsam odit laboriosam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis adipisci aliquam saepe modi aperiam, neque voluptates maxime sed aspernatur consectetur animi sequi excepturi, consequatur nostrum tempore. Minus dolore ipsum architecto. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut hic non illo quasi ipsam nam illum pariatur voluptates error adipisci a, eligendi omnis ab corrupti ad temporibus iste eaque. Praesentium! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis officia blanditiis recusandae ad numquam tempore doloremque nam necessitatibus, unde sed. Consectetur rerum corporis maiores neque voluptate modi eum quod atque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora blanditiis corporis impedit voluptas dolorem necessitatibus nam nulla odit! Repellat rem veniam id quidem expedita, odit dolorum tempore voluptate officiis! Aut!</h1>
+      <Typography variant="h5">
+        A Recursive function can be defined as a routine that calls itself
+        directly or indirectly.
+      </Typography>
+      <div className="flex flex-col justify-center items-center">
+        <img src={recurFun} alt="recursion-fun" className="w-2/3" />
+        {comp.map((item, index) => (
+          <div key={index}>
+            <Typography variant="h5">
+              <Typography variant="h4" className="text-cyan-600">{item.title}</Typography>
+              {item.desc}
+            </Typography>
+          </div>
+        ))}
+      </div>
     </Intro>
-  )
+  );
 }
 
-export default RecurIntro
+export default RecurIntro;
