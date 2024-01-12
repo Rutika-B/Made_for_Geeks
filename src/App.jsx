@@ -17,6 +17,7 @@ import GraphIntro from "./pages/Graph/GraphIntro";
 import { ThemeProvider } from "@material-tailwind/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import TraversalHome from "./pages/Tree/Traversal/Home";
+import Dfs from "./pages/Graph/Algo/dfs";
 
 function App() {
   const router = createBrowserRouter(
@@ -34,7 +35,7 @@ function App() {
         <Route path="/tree/traversal/:slug" element={<TraversalHome/>} /> */}
         {/* // -------------------------------------------------------------- */}
         <Route path="/graph" element={<GraphLayout />} />
-        <Route path="/graph/introduction" element={<GraphIntro />} />
+        <Route path="/graph/dfs" element={<Dfs/>} />
       </Route>
     )
   );

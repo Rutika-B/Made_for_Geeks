@@ -4,7 +4,7 @@
 }
 
 .node text {
-  fill: #112d4e;
+  fill: var(--border-node);
 }
 
 path.link {
@@ -108,4 +108,11 @@ path.link {
   justify-content: center;
   height: 60%;
   width: 100%;
+}
+html[data-theme='light'] {
+  --border-node: #121416d8;
+}
+
+html[data-theme='dark'] {
+  --border-node: #F7F8F8;
 }

@@ -106,7 +106,6 @@ function TreeIntro() {
             </Typography>
           </div>
         </div>
-       
       </Intro>
     </>
   );
