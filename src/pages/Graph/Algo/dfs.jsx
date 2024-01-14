@@ -8,11 +8,14 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 import TransitionedList from "../../../components/TransitionList";
+import steps from "../../../constants/Graph/nodesData";
 
 class Dfs extends Component {
   constructor() {
     super();
     this.state = {
+      visited: [0, 0, 0, 0, 0, 0],
+      action: [],
       traversalOrder: [],
       list: [],
       nodes: [
@@ -92,13 +95,27 @@ class Dfs extends Component {
     ) {
       console.log("displaylist");
       let tempList = [...this.state.list, this.state.traversalOrder[index][0]];
-      this.setState({ list: tempList }, () => {
-        setTimeout(() => {
-          this.displayList(index + 1);
-          console.log(index);
-          this.animateGraph(this.state.traversalOrder[index + 1]);
-        }, 1500);
+
+      const tmp = [...this.state.visited];
+      const value = this.state.traversalOrder[index][0];
+      const next = tmp.map((item, id) => {
+        if (id === value - 1) {
+          return 1;
+        } else {
+          return item;
+        }
       });
+
+      this.setState(
+        { list: tempList, visited: next, action: steps[index] },
+        () => {
+          setTimeout(() => {
+            this.displayList(index + 1);
+            console.log(this.state.action);
+            this.animateGraph(this.state.traversalOrder[index + 1]);
+          }, 1500);
+        }
+      );
     }
   };
   animateGraph = (value) => {
@@ -109,8 +126,8 @@ class Dfs extends Component {
 
     const updatedEdgeData = edgeData.map((edge, index) => {
       console.log(index);
-      const ind=index.toString();
-      if (ind===value[1]) {
+      const ind = index.toString();
+      if (ind === value[1]) {
         console.log("im in if block");
         return {
           ...edge,
@@ -138,13 +155,19 @@ class Dfs extends Component {
   };
 
   handleClick = () => {
-    const traversalOrder = [["1",'0'],["2","6"],["3","4"], ["5","5"],["6","3"],["4","-1"]];
+    const traversalOrder = [
+      ["1", "0"],
+      ["2", "6"],
+      ["3", "4"],
+      ["5", "5"],
+      ["6", "3"],
+      ["4", "-1"],
+    ];
     this.setState({ traversalOrder }, () => {
       this.displayList(0);
       this.animateGraph(this.state.traversalOrder[0]);
     });
   };
-
   render() {
     return (
       <>
@@ -159,9 +182,27 @@ class Dfs extends Component {
               <Controls />
             </ReactFlow>
           </div>
-          <button onClick={this.handleClick}>show</button>
-          <div className="transition-list">
-            <TransitionedList list={this.state.list} />
+          <div className="flex flex-col">
+              <button onClick={this.handleClick} >show</button>
+            <div className="transition-list">
+              <TransitionedList list={this.state.list} />
+            </div>
+            <div>
+              Visited :
+              <span className="mx-3">
+                {this.state.visited.map((item, id) => (
+                  <li
+                    key={id}
+                    className="bg-blackw-10 h-10 border-white border-2 p-2 items-center justify-center"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </span>
+            </div>
+            {this.state.action.map((item, id) => (
+              <div>{item}</div>
+            ))}
           </div>
         </div>
       </>
