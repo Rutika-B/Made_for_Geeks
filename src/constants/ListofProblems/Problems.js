@@ -1,4 +1,76 @@
 const problems = {
+  graph: {
+      dfs: {
+        title: "Dfs traversal of the graph",
+        statement: {
+          brief:
+            "Depth First Traversal (or DFS) for a graph is similar to Depth First Traversal of a tree. The only catch here is, that, unlike trees, graphs may contain cycles (a node may be visited twice). To avoid processing a node more than once, use a boolean visited array. A graph can have more than one DFS traversal.",
+        },
+        examples: { input: " root - 1", output: "[1,2,3,5,6,4]" },
+        approach: [
+          "1. Create a recursive function that takes the index of node and a visited array",
+          "2. Mark the current node as visited and print the node.",
+          "3. Traverse all the adjacent and unmarked nodes and call the recursive function with index of adjacent node.",
+        ],
+        ytLink: "https://youtu.be/Qzf1a--rhp8?si=Djxkzuu1TSwxA4rJ",
+        leetcode:
+          "https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1",
+        cpp: `
+#include <bits/stdc++.h>
+using namespace std;
+      
+class Solution {
+public:
+// Function to return a list containing the DFS traversal of the graph.
+  void f(int ind,vector<int>adj[],int vis[],vector<int>&ans)
+  {
+      for(auto it:adj[ind])
+      {
+          if(!vis[it])
+          {
+              ans.push_back(it);
+              vis[it]=1;
+              f(it,adj,vis,ans);
+          }
+      }
+  }
+  vector<int> dfsOfGraph(int V, vector<int> adj[]) {
+  // Code here
+      vector<int>ans;
+      int vis[V+1]={0};
+      vis[0]=1;
+      ans.push_back(0);
+      f(0,adj,vis,ans);
+           return ans;
+  }
+};      
+int main() {
+  int tc;
+  cin >> tc;
+  while (tc--) {
+      int V, E;
+      cin >> V >> E;
+        
+      vector<int> adj[V];
+        
+      for (int i = 0; i < E; i++) {
+           int u, v;
+           cin >> u >> v;
+           adj[u].push_back(v);
+           adj[v].push_back(u);
+      }
+              
+  Solution obj;
+  vector<int> ans = obj.dfsOfGraph(V, adj);
+  for (int i = 0; i < ans.size(); i++) {
+      cout << ans[i] << " ";
+  }
+  cout << endl;
+  }
+  return 0;
+}`,
+      },
+  },
   tree: {
     preorder: {
       title: "preorder traversal of the tree",
@@ -20,8 +92,10 @@ const problems = {
         "4.Preorder (root -> right)",
         "5.End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=RlUu72JrOCQ&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=6",
-      leetcode:'https://leetcode.com/problems/binary-tree-preorder-traversal/description/',
+      ytLink:
+        "https://www.youtube.com/watch?v=RlUu72JrOCQ&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=6",
+      leetcode:
+        "https://leetcode.com/problems/binary-tree-preorder-traversal/description/",
       cpp: `// C++ program for preorder traversals
 
       #include <bits/stdc++.h>
@@ -121,7 +195,7 @@ const problems = {
           tree.printPreorder(tree.root);
       }
   }`,
-  python:`# Python program for preorder traversals
+      python: `# Python program for preorder traversals
 
   # Structure of a Binary Tree Node
   class Node:
@@ -156,7 +230,7 @@ const problems = {
   
       # Function call
       print("Preorder traversal of binary tree is:")
-      printPreorder(root)`
+      printPreorder(root)`,
     },
     inorder: {
       title: "Inorder traversal of the tree",
@@ -178,8 +252,10 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=Z_NEgBgbRVI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=7",
-      leetcode:'https://leetcode.com/problems/binary-tree-inorder-traversal/description/',
+      ytLink:
+        "https://www.youtube.com/watch?v=Z_NEgBgbRVI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=7",
+      leetcode:
+        "https://leetcode.com/problems/binary-tree-inorder-traversal/description/",
       cpp: `
       // C++ program for Inorder traversals
 
@@ -229,7 +305,7 @@ const problems = {
       
           return 0;
       }`,
-      java:`// Java program for inorder traversals
+      java: `// Java program for inorder traversals
       import java.util.*;
       
       // Structure of a Binary Tree Node
@@ -281,7 +357,7 @@ const problems = {
       }
       // This code is contributed by prasad264
       `,
-      python:`# Structure of a Binary Tree Node
+      python: `# Structure of a Binary Tree Node
       class Node:
         def __init__(self, v):
           self.data = v
@@ -314,7 +390,7 @@ const problems = {
         # Function call
         print("Inorder traversal of binary tree is:")
         printInorder(root)
-      `
+      `,
     },
     postorder: {
       title: "Postorder traversal of the tree",
@@ -336,8 +412,10 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=COQOU6klsBg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=8",
-      leetcode:'https://leetcode.com/problems/binary-tree-postorder-traversal/description/',
+      ytLink:
+        "https://www.youtube.com/watch?v=COQOU6klsBg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=8",
+      leetcode:
+        "https://leetcode.com/problems/binary-tree-postorder-traversal/description/",
       cpp: `// C++ program for Postorder traversals
 
   #include <bits/stdc++.h>
@@ -387,7 +465,7 @@ const problems = {
     return 0;
   }
   `,
-  java:`// Java program for postorder traversals
+      java: `// Java program for postorder traversals
   import java.util.*;
   
   // Structure of a Binary Tree Node
@@ -436,7 +514,7 @@ const problems = {
   }
   // This code is contributed by prasad264
   `,
-  python:`# Python program for postorder traversals
+      python: `# Python program for postorder traversals
 
   # Structure of a Binary Tree Node
   
@@ -498,8 +576,10 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=9",
-      leetcode:"https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
+      ytLink:
+        "https://www.youtube.com/watch?v=EoAsWbO7sqg&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=9",
+      leetcode:
+        "https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
       cpp: `// Recursive C program for level
   // order traversal of Binary Tree
   #include <stdio.h>
@@ -589,7 +669,7 @@ const problems = {
     return 0;
   }
   `,
-  java:`// Recursive Java program for level
+      java: `// Recursive Java program for level
   // order traversal of Binary Tree
   
   // Class containing left and right child of current
@@ -670,7 +750,7 @@ const problems = {
     }
   }
   `,
-  python:`# Recursive Python program for level
+      python: `# Recursive Python program for level
   # order traversal of Binary Tree
   
   
@@ -755,8 +835,10 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=3OXWEdlIGl4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=20",
-      leetcode:"https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
+      ytLink:
+        "https://www.youtube.com/watch?v=3OXWEdlIGl4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=20",
+      leetcode:
+        "https://leetcode.com/problems/binary-tree-level-order-traversal/description/",
       cpp: `// C++ implementation of a O(n) time method for
   // Zigzag order traversal
   #include <iostream>
@@ -847,7 +929,7 @@ const problems = {
     return 0;
   }
   `,
-  java:`// Java implementation of a O(n) time 
+      java: `// Java implementation of a O(n) time 
   // method for Zigzag order traversal
   import java.util.*;
   
@@ -944,7 +1026,7 @@ const problems = {
   
   // This Code is contributed by Harikrishnan Rajan.
   `,
-  python:`# Python Program to print zigzag traversal
+      python: `# Python Program to print zigzag traversal
   # of binary tree
   
   # Binary tree node
@@ -1017,7 +1099,7 @@ const problems = {
   zigzagtraversal(root)
   
   # This code is contributed by Shweta Singh
-  `
+  `,
     },
     boundaryorder: {
       title: "boundary order traversal of the tree",
@@ -1039,8 +1121,10 @@ const problems = {
         "Preorder (root -> right)",
         "End",
       ],
-      ytLink:"https://www.youtube.com/watch?v=0ca1nvR0be4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=21",
-      leetcode:"https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
+      ytLink:
+        "https://www.youtube.com/watch?v=0ca1nvR0be4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=21",
+      leetcode:
+        "https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
       cpp: `#include <iostream>
   using namespace std;
   
@@ -1156,7 +1240,7 @@ const problems = {
     return 0;
   }
   `,
-  java:`// Java program to print boundary traversal of binary tree
+      java: `// Java program to print boundary traversal of binary tree
 
   /* A binary tree node has data, pointer to left child
   and a pointer to right child */
@@ -1265,7 +1349,7 @@ const problems = {
     }
   }
   `,
-  python:`# Python3 program for binary traversal of binary tree
+      python: `# Python3 program for binary traversal of binary tree
 
   # A binary tree node
   class Node:
@@ -1376,8 +1460,10 @@ const problems = {
         "Apply this for every element in the array starting from index 0 until we reach the last index.",
         "Print the subsequence once the last index is reached.",
       ],
-      ytLink:"https://www.youtube.com/watch?v=AxNNVECce8c&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=6&t=622s",
-      leetcode:"https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab",
+      ytLink:
+        "https://www.youtube.com/watch?v=AxNNVECce8c&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=6&t=622s",
+      leetcode:
+        "https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab",
       cpp: `// C++ code to print all possible
       // subsequences for given array using
       // recursion
@@ -1438,7 +1524,7 @@ const problems = {
       }
       
       `,
-      java:`// Java code to print all possible
+      java: `// Java code to print all possible
       // subsequences for given array using
       // recursion
       import java.io.*;
@@ -1497,7 +1583,7 @@ const problems = {
       
       // This code is contributed by Mukul Sharma
       `,
-      python:`# Python3 code to print all possible 
+      python: `# Python3 code to print all possible 
       # subsequences for given array using 
       # recursion 
       

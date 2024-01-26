@@ -21,7 +21,8 @@ function ProblemHeader({ ...props }) {
         <Typography variant="h5" className="py-2">
           {data.statement.brief}
         </Typography>
-        {data.statement.points.map((item, index) => (
+        
+        {data.statement.points && data.statement.points.map((item, index) => (
           <li key={index} className="flex flex-wrap my-1">
             <Typography variant="h5" className="">
             <ArrowForwardIcon />

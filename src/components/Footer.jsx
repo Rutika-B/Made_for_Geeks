@@ -81,7 +81,7 @@ function Footer() {
 
             <li>
               <a
-                href="/"
+                href="https://github.com/Rutika-B"
                 rel="noreferrer"
                 target="_blank"
                 class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
